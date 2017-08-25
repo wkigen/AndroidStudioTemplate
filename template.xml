@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="VKMvvmActivity"
+    minApi="7"
+    minBuildApi="14"
+    description="Creates a new Mvvm activity">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+    
+	<!-- 创建的view的类型 -->
+	 <parameter
+        id="viewType"
+        name="View type"
+        type="enum"
+        constraints="nonempty"
+        default="Activity"
+        help="The name of the activity class to create">
+        	<option id="Activity">Activity</option>
+        	<option id="Fragment">Fragment</option>
+     </parameter>
+        <!-- 选择子目录 -->
+   
+	<!-- 创建的view的名称 -->
+    <parameter
+        id="viewName"
+        name="View Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Main"
+        help="The name of the view class to create" />
+ 	<parameter
+        id="subModule"
+        name="Sub Module"
+        type="enum"
+        default="main" >
+            <option id="main">main</option>
+    </parameter>
+	<!-- 是否创建layout -->
+    <parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+        
+	<!-- 创建界面时候的layout名称 -->
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${subModule?lower_case}_${viewType?lower_case}_${viewName?lower_case}"
+        visibility="generateLayout"
+        help="The name of the layout to create for the view" />
+        
+ 	<!-- 当前创建界面是否为启动项 -->
+    <parameter
+        id="isLauncher"
+        name="Launcher Activity"
+        type="boolean"
+        default="false"
+         visibility="viewType='Activity'"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+	
+    <!-- 选择包名 -->
+    <parameter
+        id="rootPackage"
+        name="Package name"
+        type="enum"
+        default="com.vicky.android" >
+           	<option id="com.vicky.android">com.vicky.android</option>
+            <option id="com.vicky.cloudmusic">com.vicky.cloudmusic</option>
+    </parameter>
+
+ 
+
+    <!-- view路径 -->
+    <parameter
+        id="viewPath"
+        name="View relative path"
+        type="string"
+        constraints="nonempty"
+        suggest="view.${viewType?lower_case}.${subModule}"
+        />
+    <!-- viewmodel路径 -->
+    <parameter
+        id="viewModelPath"
+        name="ViewModel relative path"
+        type="string"
+        constraints="nonempty"
+        suggest="viewmodel.${subModule}" />
+    <!-- 当前是否有title -->
+    <parameter
+        id="hasTitle"
+        name="Has Title"
+        type="boolean"
+        default="viewType='Activity'"
+        visibility="viewType='Activity'"
+      />
+     <!-- 当前是否有网络-->
+     <parameter
+        id="hasNet"
+        name="Has Net"
+        type="boolean"
+        default="false"
+        help="If true, viewmodel will have the comment block about network" />
+        
+    <!-- 当前是否有ListView -->
+    <parameter
+        id="hasListView"
+        name="Has ListView"
+        type="boolean"
+        visibility="generateLayout"
+        default="false"
+        help="If true, listview will added to your code" />
+      
+    <!-- adapter名称 -->
+    <parameter
+        id="adapterName"
+        name="Adapter Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        visibility="hasListView"
+        default="InputYourAdapterName"
+        />
+        
+    <!-- adapter对应的entity名称-->
+    <parameter
+        id="entityName"
+        name="Entity Name"
+        type="string"
+        visibility="hasListView"
+        constraints="class|unique|nonempty"
+        default="InputYourEntityName"
+         />
+        
+    <!-- adapter对应的itemlayout-->
+    <parameter
+        id="itemlayout"
+        name="Item Layout"
+        type="string"
+        visibility="hasListView"
+        constraints="class|unique|nonempty"
+        default="InputYourItemLayout"
+        />
+        
+    <!-- 当前是否有下拉刷新 -->
+    <parameter
+        id="hasRefresh"
+        name="Has Refresh"
+        type="boolean"
+        default="false"
+      />
+
+   
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+</template>
