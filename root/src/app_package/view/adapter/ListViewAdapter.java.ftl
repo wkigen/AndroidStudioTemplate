@@ -1,8 +1,8 @@
-package ${rootPackage}.view.adapter.${subModule};
+package ${rootPackage}.view.adapter;
 
 import android.content.Context;
 import ${rootPackage}.R;
-import ${rootPackage}.bean.${subModule}.${entityName};
+import ${rootPackage}.bean.${entityName};
 import ${baseLibPath}.adapter.core.AdapterViewAdapter;
 import ${baseLibPath}.adapter.core.ViewHolderHelper;
 

@@ -12,7 +12,7 @@ import ${rootPackage}.R;
 import ${rootPackage}.${viewModelPath}.${viewName+VM};
 import ${rootPackage}.view.fragment.base.BaseFragment;
 <#if hasListView>
-import ${rootPackage}.view.adapter.${subModule}.${adapterName};
+import ${rootPackage}.view.adapter.${adapterName};
 import ${baseLibPath}.adapter.core.OnItemChildClickListener;
 </#if>
 <#if hasRefresh>

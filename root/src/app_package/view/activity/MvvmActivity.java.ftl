@@ -12,7 +12,7 @@ import ${rootPackage}.${viewModelPath}.${viewName+VM};
 import ${baseLibPath}.mvvm.IView;
 import ${rootPackage}.view.activity.base.BaseActivity;
 <#if hasListView>
-import ${rootPackage}.view.adapter.${subModule}.${adapterName};
+import ${rootPackage}.view.adapter.${adapterName};
 import ${baseLibPath}.adapter.core.OnItemChildClickListener;
 </#if>
 <#if hasRefresh>

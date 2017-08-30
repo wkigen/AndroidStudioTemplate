@@ -1,4 +1,4 @@
-package ${rootPackage}.bean.${subModule};
+package ${rootPackage}.bean;
 
 import java.io.Serializable;
 

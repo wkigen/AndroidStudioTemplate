@@ -17,9 +17,9 @@
 
 	<#if hasListView>
 	<instantiate from="root/src/app_package/bean/Bean.java.ftl"
-                   to="${escapeXmlAttribute(mysrcout)}/bean/${slashedPackageName(subModule)}/${entityName}.java" />
+                   to="${escapeXmlAttribute(mysrcout)}/bean/${entityName}.java" />
     <instantiate from="root/src/app_package/view/adapter/ListViewAdapter.java.ftl"
-                   to="${escapeXmlAttribute(mysrcout)}/view/adapter/${slashedPackageName(subModule)}/${adapterName}.java" />      
+                   to="${escapeXmlAttribute(mysrcout)}/view/adapter/${adapterName}.java" />      
     <instantiate from="root/res/layout/item_listview.xml.ftl"
                    to="${escapeXmlAttribute(resOut)}/layout/${itemlayout?lower_case}.xml" />         
 	</#if>

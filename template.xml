@@ -31,13 +31,6 @@
         constraints="class|unique|nonempty"
         default="Main"
         help="The name of the view class to create" />
- 	<parameter
-        id="subModule"
-        name="Sub Module"
-        type="enum"
-        default="main" >
-            <option id="main">main</option>
-    </parameter>
 	<!-- 是否创建layout -->
     <parameter
         id="generateLayout"
@@ -52,7 +45,7 @@
         name="Layout Name"
         type="string"
         constraints="layout|unique|nonempty"
-        suggest="${subModule?lower_case}_${viewType?lower_case}_${viewName?lower_case}"
+        suggest="${viewType?lower_case}_${viewName?lower_case}"
         visibility="generateLayout"
         help="The name of the layout to create for the view" />
         
@@ -83,7 +76,7 @@
         name="View relative path"
         type="string"
         constraints="nonempty"
-        suggest="view.${viewType?lower_case}.${subModule}"
+        suggest="view.${viewType?lower_case}"
         />
     <!-- viewmodel路径 -->
     <parameter
@@ -91,7 +84,7 @@
         name="ViewModel relative path"
         type="string"
         constraints="nonempty"
-        suggest="viewmodel.${subModule}" />
+        suggest="viewmodel" />
     <!-- 当前是否有title -->
     <parameter
         id="hasTitle"

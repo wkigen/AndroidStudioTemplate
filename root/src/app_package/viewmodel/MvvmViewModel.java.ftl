@@ -1,4 +1,4 @@
-package ${rootPackage}.viewmodel.${subModule};
+package ${rootPackage}.viewmodel;
 
 import android.os.Bundle;
 import ${rootPackage}.${viewPath}.${viewName+viewType};
