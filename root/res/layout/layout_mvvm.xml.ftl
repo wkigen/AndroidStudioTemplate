@@ -16,8 +16,7 @@
 		<ListView
 	        android:id="@+id/lv_listview"
 	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:padding="5dp" />
+	        android:layout_height="match_parent"/>
 	</#if>
   	<#if hasRefresh>
 	 </com.vicky.android.baselib.refreshlayout.RefreshLayout>

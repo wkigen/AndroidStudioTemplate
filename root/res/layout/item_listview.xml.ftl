@@ -2,8 +2,6 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
-    android:layout_margin="5dp"
-    android:padding="10dp">
+    android:layout_height="50dp">
 
 </RelativeLayout>
