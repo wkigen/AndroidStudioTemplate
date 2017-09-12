@@ -116,9 +116,4 @@ public class ${viewName+viewType} extends BaseFragment<${viewName+viewType}, ${v
         return ${viewName+VM}.class;
     }
 
-
-	@Override
-    public void reLoadData() {
-        
-    }
 }
