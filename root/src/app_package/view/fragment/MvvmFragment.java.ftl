@@ -95,20 +95,6 @@ public class ${viewName+viewType} extends BaseFragment<${viewName+viewType}, ${v
         return null;
     }
 
-    @Override
-    protected void onFirstUserVisible() {
-
-    }
-
-    @Override
-    protected void onUserVisible() {
-
-    }
-
-    @Override
-    protected void onUserInvisible() {
-
-    }
 
     @Nullable
     @Override
